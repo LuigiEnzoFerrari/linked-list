@@ -3,7 +3,8 @@ NAME = libqueue.a
 SANIT = -g -fsanitize=address
 
 SRCS = newNode.c insertFront.c nodeLast.c insertEnd.c \
-	nodeFree.c lstFree.c nodeDelete.c lstDelete.c
+	nodeFree.c lstFree.c nodeDelete.c lstDelete.c \
+	lstPrint.c
 
 OBJS = $(patsubst %.c, %.o, $(SRCS))
 
