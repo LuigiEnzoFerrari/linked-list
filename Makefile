@@ -1,6 +1,10 @@
 NAME = libqueue.a
 
-SRCS = newNode.c insertFront.c nodeLast.c insertEnd.c
+SANIT = -g -fsanitize=address
+
+SRCS = newNode.c insertFront.c nodeLast.c insertEnd.c \
+	nodeFree.c lstFree.c nodeDelete.c lstDelete.c
+
 OBJS = $(patsubst %.c, %.o, $(SRCS))
 
 all: $(NAME)
@@ -10,6 +14,9 @@ $(NAME): $(OBJS)
 
 $(OBJS): $(SRCS)
 	clang -c $(SRCS) -I ./
+
+run:
+	clang main.c libqueue.a $(SANIT) -I .
 
 clean:
 	$(RM) $(OBJS)
