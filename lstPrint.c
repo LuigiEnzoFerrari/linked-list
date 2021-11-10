@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   lstPrint.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/08 10:08:27 by lenzo-pe          #+#    #+#             */
+/*   Updated: 2021/11/10 03:45:11 by lenzo-pe         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <libqueue.h>
 #include <stdio.h>
 
@@ -26,12 +38,14 @@ static void	putnbr(int nb)
 ** by a endline.
 */
 
-void	lstPrint(t_node *lst)
+void	lstPrint(t_node *lst, int c)
 {
-	while (lst)
+	while (lst != NULL)
 	{
 		putnbr(lst->data);
-		pchar('\n');
 		lst = lst->next;
+		if (lst != NULL)
+			pchar(c);
 	}
+	pchar('\n');
 }

@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   nodeFree.c                                         :+:      :+:    :+:   */
+/*   lstSize.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 10:08:42 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/10 03:35:37 by lenzo-pe         ###   ########.fr       */
+/*   Created: 2021/11/08 10:08:31 by lenzo-pe          #+#    #+#             */
+/*   Updated: 2021/11/08 10:10:46 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libqueue.h>
 
 /*
-** Free and delete the given pointer to a node in a linked list
+** Return the number of nodes in a list from head to tail
 */
 
-void	nodeFree(t_node *lst)
+size_t	lstSize(t_node *lst)
 {
-	if (lst != NULL)
-		free(lst);
+	size_t	i;
+
+	i = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
 }

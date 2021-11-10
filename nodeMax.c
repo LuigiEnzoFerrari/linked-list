@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   nodeFree.c                                         :+:      :+:    :+:   */
+/*   nodeMax.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 10:08:42 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/10 03:35:37 by lenzo-pe         ###   ########.fr       */
+/*   Created: 2021/11/08 10:08:48 by lenzo-pe          #+#    #+#             */
+/*   Updated: 2021/11/10 03:38:47 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libqueue.h>
 
 /*
-** Free and delete the given pointer to a node in a linked list
+** Return a pointer to a node in a linked list with the max value on it.
+** if the list has the max value duplicated the return should be the
+** pointer to the first occurrence.
 */
 
-void	nodeFree(t_node *lst)
+t_node	*nodeMax(t_node *lst)
 {
-	if (lst != NULL)
-		free(lst);
+	t_node	*ptr;
+
+	ptr = lst;
+	while (lst != NULL)
+	{
+		if (lst->data > ptr->data)
+			ptr = lst;
+		lst = lst->next;
+	}
+	return (ptr);
 }

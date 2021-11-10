@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   nodeFree.c                                         :+:      :+:    :+:   */
+/*   lstDuplicate.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 10:08:42 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/10 03:35:37 by lenzo-pe         ###   ########.fr       */
+/*   Created: 2021/11/08 10:08:19 by lenzo-pe          #+#    #+#             */
+/*   Updated: 2021/11/08 10:08:20 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libqueue.h>
-
 /*
-** Free and delete the given pointer to a node in a linked list
+** return a linked list with the same values, size, order.
 */
 
-void	nodeFree(t_node *lst)
+#include <libqueue.h>
+
+t_node	*lstDuplicate(t_node *lst)
 {
-	if (lst != NULL)
-		free(lst);
+	t_node	*cpy;
+
+	cpy = NULL;
+	while (lst)
+	{
+		insertEnd(&cpy, lst->data);
+		lst = lst->next;
+	}
+	return (cpy);
 }
