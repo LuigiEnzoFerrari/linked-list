@@ -1,11 +1,11 @@
-NAME = libqueue.a
+NAME = liblist.a
 
 SANIT = -g -fsanitize=address
 
-SRCS = newNode.c insertFront.c nodeLast.c insertEnd.c \
-	nodeFree.c lstFree.c nodeDelete.c lstDelete.c lstSize.c \
-	lstPrint.c lstDuplicate.c \
-	nodeMin.c nodeMax.c \
+SRCS = new_node.c insert_front.c node_last.c insert_end.c \
+	node_free.c lst_free.c node_delete.c lst_delete.c lst_size.c \
+	lst_print.c lst_duplicate.c \
+	node_min.c node_max.c \
 
 OBJS = $(patsubst %.c, %.o, $(SRCS))
 
@@ -18,7 +18,7 @@ $(OBJS): $(SRCS)
 	clang -c $(SRCS) -I ./
 
 run:
-	clang main.c libqueue.a $(SANIT) -I .
+	clang main.c liblist.a $(SANIT) -I .
 
 clean:
 	$(RM) $(OBJS)
@@ -26,6 +26,6 @@ clean:
 fclean: clean
 	$(RM) $(NAME)
 
-re: fclean re
+re: fclean all
 
 .PHONY: all clean fclean re
