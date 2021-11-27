@@ -1,4 +1,63 @@
-![Linked List Illustration](./imgs/linked-list-insert.gif)
+```c
+t_node	*new_node(int data);
+```
+
+```c
+void	insert_front(t_node **lst, int data);
+```
+
+```c
+void	insert_end(t_node **lst, int data);
+```
+
+```c
+t_node	*node_min(t_node *lst);
+```
+
+```c
+t_node	*node_max(t_node *lst);
+```
+
+```c
+t_node	*node_last(t_node *lst);
+```
+
+```c
+size_t	lst_size(t_node *lst);
+```
+
+
+```c
+void	lst_print(t_node *lst, int c);
+```
+
+
+```c
+t_node	*lst_duplicate(t_node *lst);
+```
+
+```c
+void	node_free(t_node *lst);
+```
+
+```c
+void	node_delete(t_node **lst);
+```
+
+```c
+void	lst_free(t_node *lst);
+```
+
+```c
+void	node_delete(t_node **lst);
+```
+
+```c
+. . .	node_append(. . .);
+```
+```c
+. . .	node_pop(. . .);
+```
 
 # Data Structure and Algorithms - Linked List  
 
